@@ -9,13 +9,18 @@ angular.module('myApp.review', ['ngRoute'])
     });
   }])
 
-  .controller('AddRecipeCtrl', ['$scope', 'Restangular', function($scope, Restangular) {
-      $scope.review = {reviews:[]};
+
+    .controller('ReviewCtrl', ['$scope', 'Restangular', function($scope, Restangular) {
+
+        Restangular.all('reviews').getList().then(function (data){
+            $scope.reviews = data;
+        });
 
 
-      $scope.addReview = function() {
+        $scope.addReview = function() {
           Restangular.all('review').customPOST($scope.review).then(function() {
 
-          })
-      }
+
+          });
+      };
   }]);

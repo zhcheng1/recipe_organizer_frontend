@@ -6,24 +6,45 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Recipe Organizer</title>
+  <title>Sara Cheng's Recipe Organizer</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="app.css">
+
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
 
 
-    <ul class="nav nav-pills" role="tablist">
-        <li class="active"><a href="#/recipes">recipes <span class="sr-only">(current)</span></a></li>
-        <li><a href="#/add-recipe">add-recipe</a></li>
-        <li><a href="#/review">review</a></li>
-    </ul>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+
+        <div>
+          <p ><h2 class="navbar-text">Welcome to this site!</h2></p>
+        </div>
+
+        <div class="btn-group-justified">
+          <a href="#/recipes">
+          <button type="button" class="btn btn-info navbar-btn">Recipes for you</button>
+          </a>
+
+          <a href="#/add-recipe">
+          <button type="button" class="btn btn-info navbar-btn">Add your recipe</button>
+          </a>
+
+          <a href="#/review">
+          <button type="button" class="btn btn-info navbar-btn">Reviews</button>
+          </a>
+
+          <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-list"></span>More</button>
+        </div>
+      </div>
+    </nav>
 
 
 
@@ -43,10 +64,12 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/lodash/dist/lodash.js"></script>
   <script src="bower_components/restangular/dist/restangular.js"></script>
+
   <script src="app.js"></script>
   <script src="recipes/recipes.js"></script>
   <script src="review/review.js"></script>
   <script src="add-recipe/add-recipe.js"></script>
+    <script src="recipe-detail/recipe-detail.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
