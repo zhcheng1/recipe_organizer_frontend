@@ -4,14 +4,15 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.recipes',
-  'myApp.view2',
+  'myApp.addRecipe',
+  'myApp.review',
   'myApp.version',
   'restangular'
-
 ]).
-config(['$routeProvider', 'RestangularProvider', function($routeProvider, RestangularProvider) {
-  $routeProvider.otherwise({redirectTo: '/recipes'});
+  config(['$routeProvider', 'RestangularProvider', function($routeProvider, RestangularProvider) {
+    $routeProvider
+        .otherwise({
+          redirectTo: '/recipes'});
+    RestangularProvider.setBaseUrl('http://localhost:8001');
+  }]);
 
-  RestangularProvider.setBaseUrl('http://localhost:8001')
-
-}]);

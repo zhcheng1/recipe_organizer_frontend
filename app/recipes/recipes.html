@@ -1,6 +1,17 @@
-<!DOCTYPE html>
-<html>
-<ul>
-    <li ng-repeat="recipe in recipes">{{ recipe.name }}<li>
-</ul>
-</html>
+
+<div class="container">
+
+<ol type="1" >
+
+    <li ng-repeat="recipe in recipes" >
+
+        <a href="#/recipes/{{recipe.id}}" >{{ recipe.name }}</a>
+            : {{ recipe.description }}
+        <br>
+        <br>
+
+
+    </li>
+
+</ol>
+</div>

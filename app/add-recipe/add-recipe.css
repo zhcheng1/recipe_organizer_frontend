@@ -1,0 +1,12 @@
+
+.container h1{
+    text-align: center;
+    color : blue;
+}
+
+div label{
+    text-align: center;
+    color : rgba(0, 0, 255, 0.5);
+
+}
+
