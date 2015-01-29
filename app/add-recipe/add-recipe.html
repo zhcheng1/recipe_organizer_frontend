@@ -1,3 +1,5 @@
+<div class="detail">
+
 <label>Recipe Name
     <br>
     <input ng-model="recipe.name">
@@ -33,4 +35,10 @@
 <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
 </ol>
 
-<button ng-click="addRecipe()">Save New Recipe</button>
+
+  <input type="file" name="pic" accept="image/*">
+
+
+<button ng-click="addRecipe">Save New Recipe</button>
+
+</div>

@@ -24,7 +24,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             alert("Recipe was created successfully!");
         },
         function(){
-            alert("There was a problem")
+            alert("There was a problem");
         })
     }
 }]);

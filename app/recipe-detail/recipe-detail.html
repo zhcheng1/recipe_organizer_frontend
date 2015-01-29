@@ -1,13 +1,68 @@
-
+<section>
 <div class="container-fluid">
+
+<div class="detail">
+<div style="text-align: center">
     <h2>{{recipe.name}}</h2>
 
-    <p>{{recipe.description}}</p>
+    <div align="center">
+    <img src="{{ recipe.photo }}" class="img-responsive" >
+    </div>
 
-    <p>{{recipe.direction}}</p>
+        <hr>
 
-    <p>{{recipe.ingredient}}</p>
+    <h4 >Description</h4>
+    <p class="pcenter">{{recipe.description}}</p>
 
-    <button type="button" class="btn btn-danger" ng-click="deleteRecipe">Delete</button>
+
+        <hr>
+
+    <div class="row">
+    <div class="col-sm-6 col-lg-6" style="text-align: center" >
+    <h4>Direction</h4>
+    <p>{{ recipe.direction}}</p>
+    </div>
+
+    <div class="col-sm-6 col-lg-6" style="text-align: center; border-left:2px solid lightgrey" >
+    <h4>Ingredients</h4>
+        <ul ng-repeat="ingredient in recipe.ingredients">
+            <li>{{ ingredient.name }}</li>
+        </ul>
+    </div>
+    </div>
+
+        <hr>
+
+    <button type="button" class="btn btn-danger" ng-click="deleteRecipe()">Delete</button>
+    <div class="container-fluid" style="text-align: center; padding-top: 20px">
+        <a href="#/add-recipe" class="btn btn-info">Add Your Recipe</a>
+    </div>
 
 </div>
+
+        <hr>
+
+    <div ng-repeat="review in recipe.reviews">
+        <h4 style="border-bottom:3px solid lightgrey">"{{review.title}}" ----by {{ review.username }}</h4>
+
+        <p>{{ review.reviews }}</p>
+        <hr>
+
+    </div>
+
+
+
+
+
+
+
+    </article>
+
+    </div>
+
+</div>
+</section>
+
+
+
+

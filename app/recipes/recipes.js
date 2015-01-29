@@ -7,12 +7,12 @@ angular.module('myApp.recipes', ['ngRoute'])
           .when('/recipes',
           {
             templateUrl: 'recipes/recipes.html',
-            controller: ['RecipesCtrl', 'ReviewCtrl']
+            controller: 'RecipesCtrl'
           });
     }])
 
-    .controller('RecipesCtrl', ['$scope', 'Restangular', function($scope, Restangular) {
-        Restangular.all('recipes').getList().then(function (data){
+    .controller('RecipesCtrl', ['$scope', 'RecipeService', function($scope, RecipeService) {
+        RecipeService.getAll().then(function (data){
             $scope.recipes = data;
         });
 

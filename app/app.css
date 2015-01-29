@@ -28,3 +28,58 @@
   content: "";
   padding: 0;
 }
+
+.background {
+  background: url('../media/photo/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+
+.recipe-card{
+  padding: 3px 3px 3px 3px;
+  background-color: rgba(255,255,255,0.85);
+  border:10px solid rgba(255,165,0,0.5);
+
+}
+
+.pcenter {
+
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+
+.titlebox{
+    background: rgba(158,216,255,0.5);
+    padding-top: 100px;
+    padding-right: 30px;
+    padding-bottom: 100px;
+    padding-left: 30px;
+
+}
+
+.detail{
+    background-color: rgba(255,255,255,0.85);
+    border:10px solid rgba(255,165,0,0.5);
+
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.media {
+  margin-top: 15px;
+}
+
+
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}

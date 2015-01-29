@@ -1,16 +1,27 @@
 
 <div class="container">
-    <div>
-    <ol type="1" >
-        <li  ng-repeat="recipe in recipes" >
-            <a href="#/recipes/{{recipe.id}}" >{{ recipe.name }}</a>
-                : {{ recipe.description }}
-               <img src="{{ recipe.photo }}" width="400" >
 
-        </li>
+<div class="row">
+<div class="col-sm-6 col-md-4" ng-repeat="recipe in recipes" >
+    <div class="recipe-card">
 
-    </ol>
+        <a href="#/recipes/{{recipe.id}}" ><h2 align="center">{{ recipe.name }}</h2></a>
+
+        <div align="center">
+        <a href="#/recipes/{{recipe.id}}" >
+        <img src="{{ recipe.photo }}" class="img-responsive" >
+        </a>
+        </div>
+
+        <h4 style="text-align:center" >Description:</h4>
+        <p class="pcenter">{{ recipe.description }}</p>
+
+        <div align="center">
+        <a href="#/recipes/{{recipe.id}}" class="btn btn-info">Details</a>
+        </div>
+
     </div>
 
-
+</div>
+</div>
 </div>
