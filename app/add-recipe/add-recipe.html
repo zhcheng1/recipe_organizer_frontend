@@ -1,44 +1,44 @@
-<div class="detail">
+<div class="detail" align="center">
 
-<label>Recipe Name
+    <label>Recipe Name
+        <br>
+        <input ng-model="recipe.name">
+    </label>
     <br>
-    <input ng-model="recipe.name">
-</label>
-<br>
-<br>
-
-<label>Recipe Description
     <br>
-    <textarea ng-model="recipe.description"></textarea>
-</label>
-<br>
-<br>
 
-<label>Recipe Directions
+    <label>Recipe Description
+        <br>
+        <textarea ng-model="recipe.description"></textarea>
+    </label>
     <br>
-    <textarea ng-model="recipe.directions"></textarea>
-</label>
-<br>
-<br>
-
-<label>Ingredients
     <br>
-    <input ng-model="ingredientName">
-</label>
-<br>
-<button ng-click="addIngredientToRecipe(ingredientName)">Add ingredient to recipe</button>
-<br>
 
-<p>Your ingredients:</p>
-<ol>
-    
-<li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
-</ol>
+    <label>Recipe Directions
+        <br>
+        <textarea ng-model="recipe.directions"></textarea>
+    </label>
+    <br>
+    <br>
+
+    <label>Ingredients
+        <br>
+        <input ng-model="ingredientName">
+    </label>
+    <br>
+    <button ng-click="addIngredientToRecipe(ingredientName)">Add ingredient to recipe</button>
+    <br>
+
+    <p>Your ingredients:</p>
+    <ol>
+
+    <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+    </ol>
 
 
-  <input type="file" name="pic" accept="image/*">
+      <input type="file" name="pic" accept="image/*">
 
 
-<button ng-click="addRecipe">Save New Recipe</button>
+    <button ng-click="addRecipe">Save New Recipe</button>
 
 </div>
