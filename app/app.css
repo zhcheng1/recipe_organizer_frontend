@@ -30,7 +30,7 @@
 }
 
 .background {
-  background: url('../media/photo/background.jpg') no-repeat center center fixed;
+  background: url('http://www.rodalenews.com/files/images/slideshow2/smoothie-ingredients-scoops.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -43,7 +43,7 @@
   padding: 3px 3px 3px 3px;
   background-color: rgba(255,255,255,0.85);
   border:10px solid rgba(255,165,0,0.5);
-
+  height : 30em;
 }
 
 .pcenter {
@@ -82,4 +82,10 @@
 .media-body {
   display: table-cell;
   vertical-align: top;
+}
+
+.review{
+
+    border-bottom:3px solid lightgrey;
+    padding-left: 30px
 }

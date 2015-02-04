@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="app.css">
 
@@ -21,28 +22,28 @@
 <body class="background">
 
 
-  <nav class="navbar navbar-default navbar-static-top"> <!-- stick to top -->
-    <div class="container">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation"> <!-- stick to top -->
+    <div class="container-fluid">
 
-      <div class="navbar-header">
-       <a class="navbar-brand" href="#/welcome">Recipe Organizer</a>
-      </div>
-
+        <div class="navbar-header">
 
       <!-- Brand and toggle get grouped for better mobile display -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <!--<span class="sr-only">Toggle navigation</span>-->
+                    data-target="#listoflinks">
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand" href="#/welcome">Recipe Organizer</a>
+        </div>
+
 
         <!-- contents for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="#listoflinks">
           <!-- list of contents -->
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="#/recipes">Recipes <span class="sr-only">(current)</span></a></li>
+            <ul class="nav navbar-nav">
+                <li><a href="#/recipes">Recipes<span class="sr-only">(current)</span></a></li>
                 <li><a href="#/add-recipe">Add a Recipe</a></li>
             </ul>
 
@@ -53,13 +54,14 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
+
         </div>
         <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
+
+
+
+</div><!-- /.container-fluid -->
 </nav>
-
-
 
 
 
@@ -92,12 +94,9 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+
 </body>
 
 
-<footer>
 
-    <p style="text-align: right">  Thanks!</p>
-
-</footer>
 </html>

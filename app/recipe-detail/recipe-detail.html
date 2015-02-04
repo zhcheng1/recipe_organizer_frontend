@@ -1,66 +1,76 @@
 <section>
 <div class="container-fluid">
-
-<div class="detail">
-<div style="text-align: center" ng-controller="RecipeDetailCtrl">
-    <h1>{{recipe.name}}</h1>
+<div class="detail" ng-controller="RecipeDetailCtrl">
 
     <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 img-responsive" align="center" >
-    <img src="{{ recipe.photo }}" width=40%>
+        <h1 class="text-center">{{recipe.name}}</h1>
+
+        <hr>
+
+        <div class="col-sm-6 col-md-6 ">
+            <img class="img-responsive center-block" src="{{ recipe.photo }}">
         </div>
-        <hr>
-
-    <h4 >Description</h4>
-    <p class="pcenter">{{recipe.description}}</p>
 
         <hr>
 
-    <div class="col-sm-6 col-lg-6" style="text-align: center" >
-    <h4>Direction</h4>
-    <p>{{ recipe.direction}}</p>
-    </div>
-
-    <div class="col-sm-6 col-lg-6" style="text-align: center; border-left:2px solid lightgrey" >
-    <h4>Ingredients</h4>
-        <ul ng-repeat="ingredient in recipe.ingredients">
-            <li>{{ ingredient.name }}</li>
-        </ul>
-    </div>
-    </div>
+        <div class="text-center" >
+            <h4>Direction</h4>
+            <p class="pcenter">{{ recipe.directions}}</p>
+        </div>
 
         <hr>
 
-    <div class="container-fluid" style="text-align: center; padding-top: 20px">
-        <a href="#/add-recipe" class="btn btn-info">Add Your Recipe</a>
-        <button type="button" class="btn btn-danger" ng-click="deleteRecipe()">Delete</button>
+        <div class="text-center">
+            <h4 >Ingredients</h4>
+            <p ng-repeat="ingredient in recipe.ingredients">
+                {{ ingredient.name }}
+            </p>
+        </div>
     </div>
 
 
+        <hr>
+
+
+    <div class="container-fluid" style="text-align: center">
+        <a href="#/add-recipe" class="btn btn-info btn-sm">Add Your Recipe</a>
+        <button type="button" class="btn btn-danger btn-sm" ng-click="deleteRecipe()">Delete This Recipe</button>
+    </div>
+
 
         <hr>
+
 
     <div style="text-align: left" ng-repeat="review in recipe.reviews">
-        <h4 style="border-bottom:3px solid lightgrey; padding-left: 30px">
-            <span class="glyphicon glyphicon-user"></span>
-            "{{review.title}}" ----by {{ review.username }}</h4>
 
-        <span class="glyphicon glyphicon-console" style="padding-left: 30px"> {{ review.reviews }}</span>
-    </div>
+        <h4 class="review">
+            <span class="glyphicon glyphicon-user"></span>
+            "{{review.title}}" ----by {{ review.username }}
+        </h4>
+
+
+        <p>
+            <span class="glyphicon glyphicon-console" style="padding-left: 30px"> {{ review.reviews }}</span>
+        </p>
+            <a class="glyphicon glyphicon-remove" ng-click="deleteReview(review, $index)" style="text-align: left">Delete</a>
 
 
         <hr>
 
 
+    </div>
 
-        <a class="btn btn-info" ng-click="toggle()" >Add Your Review!</a>
+
+
+
+        <a class="btn btn-info center-block" ng-click="toggle()" >Add Your Review!</a>
 
         <div class="container-fluid" ng-hide="reviewform">
             <h3>Please write your review.</h3>
 
               <div class="form-group">
                 <label>Your Name</label>
-                <input type="text" class="form-control" placeholder="Your Name" ng-model="reviewUserName">
+                <input type="text" class="form-control" name="userName" placeholder="Your Name" ng-model="reviewUserName">
 
                 <label>Title</label>
                 <input type="text" class="form-control" placeholder="Title" ng-model="reviewTitle">
@@ -68,13 +78,13 @@
                   <label>Your Score:</label>
 
                 <label>Your Opinion</label>
-                <input type="text" class="form-control" placeholder="I think..." ng-model="reviewContent">
+                <textarea type="text" class="form-control" placeholder="I think..." ng-model="reviewContent"></textarea>
               </div>
 
               <br>
 
               <button class="btn btn-info" ng-click="addReview()" ><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
-             {{successMessage}
+
         </div>
 
 
@@ -82,7 +92,7 @@
 
 
 
-</div>
+
 </div>
 
 </div>

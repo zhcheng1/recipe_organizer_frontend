@@ -16,7 +16,6 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
         $scope.recipeId = $routeParams.recipeId;
 
-
         //get one particular recipe
         Restangular.one('recipes', $scope.recipeId).customGET().then(function (data) {
             $scope.recipe = data;
@@ -41,25 +40,47 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
 
         //Add new review under one particular recipe
-        var newReview={
-            recipe: $routeParams.recipeId,
-            title: $scope.reviewTitle,
-            username: $scope.reviewUserName,
-            reviews: $scope.reviewContent
-
-        };
+        var newReview={};
 
         $scope.successMessage = "";
 
         $scope.addReview = function() {
 
-            Restangular.one('add-review/').customPOST(newReview).then(function() {
-                console.log(newReview);
-                $scope.successMessage = "Success";
-                $scope.recipe.reviews.unshift(reviews);
+            var newReview={
+                    recipe: $routeParams.recipeId,
+                    title: $scope.reviewTitle,
+                    username: $scope.reviewUserName,
+                    reviews: $scope.reviewContent
 
-          });
+                };
+            Restangular.one('add-review/').customPOST(newReview).then(function(review) {
+
+                $scope.recipe.reviews.push(review);
+                $scope.reviewUserName="";
+                $scope.reviewTitle="";
+                $scope.reviewContent=""
+
+
+            });
         };
+
+
+
+
+//delete a review
+        $scope.deleteReview=function(objects, index){
+
+            var id=objects["id"];
+
+            Restangular.one('review', id).customDELETE().then(function(){
+
+	            $scope.recipe.reviews.splice(index, 1);
+
+            });
+
+
+        };
+
 
 
         //show the addReview form or hide it
@@ -69,5 +90,8 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             $scope.reviewform = !$scope.reviewform;
             return $scope.reviewform
         };
+
+
+
   }]);
 

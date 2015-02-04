@@ -7,18 +7,18 @@
 
         <a href="#/recipes/{{recipe.id}}" ><h2 align="center">{{ recipe.name }}</h2></a>
 
-        <div align="center">
-        <a href="#/recipes/{{recipe.id}}" >
-        <img src="{{ recipe.photo }}" class="img-responsive" >
-        </a>
+        <div class="center-block">
+            <a href="#/recipes/{{recipe.id}}" >
+            <img src="{{ recipe.photo }}" class="img-responsive" >
+            </a>
         </div>
 
-        <h4 style="text-align:center" >Description:</h4>
-        <p class="pcenter">{{ recipe.description }}</p>
+        <h4 class="text-center">Description:</h4>
+        <p>{{ recipe.description }}</p>
+        <br>
 
-        <div align="center">
-        <a href="#/recipes/{{recipe.id}}" class="btn btn-info">Details</a>
-        </div>
+        <a href="#/recipes/{{recipe.id}}" class="btn btn-info center-block">Details</a>
+
 
     </div>
 
