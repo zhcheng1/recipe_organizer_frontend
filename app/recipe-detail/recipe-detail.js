@@ -42,7 +42,6 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
         //Add new review under one particular recipe
         var newReview={};
 
-        $scope.successMessage = "";
 
         $scope.addReview = function() {
 
@@ -58,7 +57,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
                 $scope.recipe.reviews.push(review);
                 $scope.reviewUserName="";
                 $scope.reviewTitle="";
-                $scope.reviewContent=""
+                $scope.reviewContent="";
 
 
             });
