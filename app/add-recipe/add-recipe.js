@@ -9,9 +9,11 @@ angular.module('myApp.addRecipe', ['ngRoute'])
   });
 }])
 
-.controller('AddRecipeCtrl', ['$scope', 'Restangular', function($scope, Restangular) {
-    $scope.recipe = {ingredients:[]};
+.controller('AddRecipeCtrl', ['$scope', 'Restangular', '$location', '$http', function($scope, Restangular, $location, $http) {
+    $scope.recipe = {
+        ingredients:[]};
 
+    //var host = $location.host();
 
     $scope.addIngredientToRecipe = function(ingredientName) {
         var ingredient = {name: ingredientName};
@@ -19,12 +21,31 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         $scope.ingredientName = '';
     };
 
-    $scope.addRecipe = function() {
-        Restangular.all('add-recipe').customPOST($scope.recipe).then(function(){
-            alert("Recipe was created successfully!");
-        },
-        function(){
-            alert("There was a problem");
-        })
-    }
-}]);
+    $scope.uploadFile = function (files) {
+        $scope.recipe.picture = files[0];
+    };
+
+    // Save fields to the item object
+    $scope.addRecipe = function () {
+
+        var fd = new FormData();
+        fd.append("photo", $scope.recipe.picture);
+        fd.append("name", $scope.recipe.name);
+        fd.append("description", $scope.recipe.description);
+        fd.append("directions", $scope.recipe.directions);
+        fd.append("ingredients", $scope.recipe.ingredients);
+
+        $http.post('http://localhost:8001/add-recipe/', fd, {
+            headers: {'Content-Type':  undefined}
+        }).success(function (response) {
+            $location.path('/recipes');
+        }).error(function (response) {
+            console.log('Error response: ' + response);
+            console.log(fd['name']);
+            console.log( $scope.recipe.name);
+        });
+    };
+
+
+
+    }]);

@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.welcome',
   'myApp.recipeDetail',
   'myApp.version',
-  'restangular'
+  'restangular',
+  'ui.bootstrap'
 ])
     .config(['$routeProvider', 'RestangularProvider', function($routeProvider, RestangularProvider) {
     $routeProvider
@@ -29,7 +30,6 @@ angular.module('myApp', [
 
       };
     }])
-
 
 
 
