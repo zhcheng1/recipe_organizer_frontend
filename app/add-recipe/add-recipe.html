@@ -2,43 +2,47 @@
     <div class="row">
     <div class="detail form-group col-sm-6 col-md-6 text-center">
         <label class="text-center">Recipe Name
-            <input type="text" class="form-control" name="recipeName" placeholder="Recipe Name" ng-model="recipe.name" />
+            <input type="text" class="form-control" name="recipeName" placeholder="Recipe Name"
+                   ng-model="recipe.name" style="width:300px"/>
         </label>
 
-    <br>
+    <br><br>
 
         <label>Recipe Description
-            <textarea type="text" class="form-control" placeholder="Recipe Description" ng-model="recipe.description"></textarea>
+            <textarea type="text" class="form-control" placeholder="Recipe Description"
+                      ng-model="recipe.description" style="width:300px; height: 100px"></textarea>
         </label>
 
-    <br>
+    <br><br>
 
         <label>Recipe Directions
-            <textarea type="text" class="form-control" placeholder="Recipe Directions" ng-model="recipe.directions"></textarea>
+            <textarea type="text" class="form-control textform" placeholder="Recipe Directions"
+                      ng-model="recipe.directions" style="width:300px; height: 100px"></textarea>
         </label>
 
-    <br>
+    <br><br>
 
         <label>Ingredients
             <br>
-            <input type="text" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
+            <input type="text" class="form-control" placeholder="Ingredients"
+                   ng-model="ingredientName" style="width:300px">
         </label>
 
-    <br>
+    <br><br>
 
-        <button class="btn btn-info btn-sm" ng-click="addIngredientToRecipe(ingredientName)">Add ingredient to recipe</button>
+        <button class="btn btn-info btn-sm" ng-click="addIngredientToRecipe(ingredientName)" >Add ingredient to recipe</button>
 
-    <br>
+    <br><br>
 
-        <p>Your ingredients:</p>
+        <label>Your ingredients:</label>
         <ol>
-            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+            <li ng-repeat="ingredient in ingredients">{{ ingredient.name }}</li>
         </ol>
 
     <br>
 
         <label>Add A Photo</label>
-        <input type="file" onchange="angular.element(this).scope().uploadFile(this.files)" />
+        <p align='center'><input type="file" onchange="angular.element(this).scope().uploadFile(this.files)" /></p>
 
 
     <hr>

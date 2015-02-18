@@ -43,7 +43,7 @@
   padding: 3px 3px 3px 3px;
   background-color: rgba(255,255,255,0.85);
   border:10px solid rgba(255,165,0,0.5);
-  height : 30em;
+  height : 35em;
 }
 
 .pcenter {
@@ -88,4 +88,16 @@
 
     border-bottom:3px solid lightgrey;
     padding-left: 30px
+}
+
+#button-bottom{
+    position: absolute;
+    right:    40%;
+    bottom:   5%;
+}
+
+.recipe-image{
+    width: 300px;
+    height: 200px;
+
 }

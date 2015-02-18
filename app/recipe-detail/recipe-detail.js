@@ -1,7 +1,7 @@
 
 'use strict';
 
-angular.module('myApp.recipeDetail', ['ngRoute'])
+angular.module('myApp.recipeDetail', ['ngRoute', 'ui.bootstrap'])
 
     .config(['$routeProvider', function($routeProvider) {
       $routeProvider
@@ -39,9 +39,9 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
         };
 
 
+
         //Add new review under one particular recipe
         var newReview={};
-
 
         $scope.addReview = function() {
 
@@ -49,6 +49,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
                     recipe: $routeParams.recipeId,
                     title: $scope.reviewTitle,
                     username: $scope.reviewUserName,
+                    star: parseInt($scope.rate),
                     reviews: $scope.reviewContent
 
                 };
@@ -58,6 +59,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
                 $scope.reviewUserName="";
                 $scope.reviewTitle="";
                 $scope.reviewContent="";
+                $scope.rate="";
 
 
             });
@@ -89,6 +91,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             $scope.reviewform = !$scope.reviewform;
             return $scope.reviewform
         };
+
 
 
 

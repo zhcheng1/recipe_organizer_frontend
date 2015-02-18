@@ -7,9 +7,9 @@
 
         <a href="#/recipes/{{recipe.id}}" ><h2 align="center">{{ recipe.name }}</h2></a>
 
-        <div class="center-block">
+        <div align="center">
             <a href="#/recipes/{{recipe.id}}" >
-            <img src="{{ recipe.photo }}" class="img-responsive" >
+            <img src="{{ recipe.photo }}" class="recipe-image" >
             </a>
         </div>
 
@@ -17,11 +17,13 @@
         <p>{{ recipe.description }}</p>
         <br>
 
-        <a href="#/recipes/{{recipe.id}}" class="btn btn-info center-block">Details</a>
+
+        <a id="button-bottom" href="#/recipes/{{recipe.id}}" class="btn btn-info center-block">Details</a>
 
 
     </div>
 
 </div>
 </div>
+
 </div>

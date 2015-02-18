@@ -7,11 +7,11 @@
 
         <hr>
 
-        <div class="col-sm-6 col-md-6 ">
-            <img class="img-responsive center-block" src="{{ recipe.photo }}">
-        </div>
+        <div class="col-sm-12 col-md-12 " align="center">
+            <img class="recipe-image"  src="{{ recipe.photo }}">
 
-        <hr>
+
+
 
         <div class="text-center" >
             <h4>Direction</h4>
@@ -25,6 +25,7 @@
             <p ng-repeat="ingredient in recipe.ingredients">
                 {{ ingredient.name }}
             </p>
+        </div>
         </div>
     </div>
 
@@ -46,6 +47,8 @@
         <h4 class="review">
             <span class="glyphicon glyphicon-user"></span>
             "{{review.title}}" ----by {{ review.username }}
+               <rating ng-model="review.star" max="5" readonly="true" on-leave="overStar = null"></rating>
+
         </h4>
 
 
@@ -72,10 +75,19 @@
                 <label>Your Name</label>
                 <input type="text" class="form-control" name="userName" placeholder="Your Name" ng-model="reviewUserName">
 
+                  <br>
+
                 <label>Title</label>
                 <input type="text" class="form-control" placeholder="Title" ng-model="reviewTitle">
 
-                  <label>Your Score:</label>
+                  <br>
+
+                 <label>Your Score:</label>
+                 <rating ng-model="rate" max="5" readonly="false"></rating>
+
+
+
+                  <br>
 
                 <label>Your Opinion</label>
                 <textarea type="text" class="form-control" placeholder="I think..." ng-model="reviewContent"></textarea>
@@ -83,7 +95,7 @@
 
               <br>
 
-              <button class="btn btn-info" ng-click="addReview" ><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
+              <button class="btn btn-info" ng-click="addReview()" ><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
 
         </div>
 
