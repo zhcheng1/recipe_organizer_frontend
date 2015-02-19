@@ -13,7 +13,7 @@ angular.module('myApp.recipeDetail', ['ngRoute', 'ui.bootstrap'])
     }])
 
     .controller('RecipeDetailCtrl', ['$scope', 'Restangular', '$routeParams', '$location',function($scope, Restangular, $routeParams, $location) {
-
+        $scope.navCollapsed = true;
         $scope.recipeId = $routeParams.recipeId;
 
         //get one particular recipe

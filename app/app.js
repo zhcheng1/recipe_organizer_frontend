@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.welcome',
   'myApp.recipeDetail',
   'myApp.version',
+  'myApp.contact',
   'restangular',
   'ui.bootstrap'
 ])

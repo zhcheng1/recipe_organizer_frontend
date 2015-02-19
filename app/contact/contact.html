@@ -1,0 +1,33 @@
+<div class="container">
+<div class="detail">
+  <h2>Contact Me!</h2>
+
+  <h4><span class='glyphicon glyphicon-envelope'></span> Email: czqapply@gmail.com</h4>
+  <h4><span class='glyphicon glyphicon-cloud'></span> GitHub: <a href="https://github.com/zhcheng1">zhcheng1</a></h4>
+
+  <hr>
+
+  <h2>Send an email to me.</h2>
+
+    <div class="form-group">
+    <label>Your Name</label>
+    <input type="text" ng-model='subject' class="form-control" placeholder="Your Name">
+  </div>
+  <div>
+    <label>Your Opinion</label>
+    <textarea type="text" ng-model='message' class="form-control" placeholder="I think..."></textarea>
+  </div>
+  <div>
+    <label>Your Email</label>
+    <input type="email" ng-model='from_email' class="form-control" placeholder="you@host.com">
+  </div>
+
+   <hr>
+
+  <div>
+  <button class='btn btn-info' ng-click="sendEmail()" ><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
+  </div>
+
+
+</div>
+ </div>
