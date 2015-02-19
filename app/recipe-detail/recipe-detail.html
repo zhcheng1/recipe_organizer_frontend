@@ -14,7 +14,7 @@
 
 
         <div class="text-center" >
-            <h4>Direction</h4>
+            <h4>Directions</h4>
             <p class="pcenter">{{ recipe.directions}}</p>
         </div>
 
@@ -22,9 +22,7 @@
 
         <div class="text-center">
             <h4 >Ingredients</h4>
-            <p ng-repeat="ingredient in recipe.ingredients">
-                {{ ingredient.name }}
-            </p>
+            <p>{{ recipe.ingredients}}</p>
         </div>
         </div>
     </div>
@@ -85,9 +83,7 @@
                  <label>Your Score:</label>
                  <rating ng-model="rate" max="5" readonly="false"></rating>
 
-
-
-                  <br>
+                  <br><br>
 
                 <label>Your Opinion</label>
                 <textarea type="text" class="form-control" placeholder="I think..." ng-model="reviewContent"></textarea>

@@ -22,7 +22,6 @@ angular.module('myApp.recipeDetail', ['ngRoute', 'ui.bootstrap'])
 
         });
 
-
         //delete a recipe
         $scope.deleteRecipe = function() {
         var confirmation = confirm('Are you sure you want to delete this recipe? This cannot be undone');
@@ -38,13 +37,10 @@ angular.module('myApp.recipeDetail', ['ngRoute', 'ui.bootstrap'])
             }
         };
 
-
-
         //Add new review under one particular recipe
         var newReview={};
 
         $scope.addReview = function() {
-
             var newReview={
                     recipe: $routeParams.recipeId,
                     title: $scope.reviewTitle,
@@ -53,36 +49,27 @@ angular.module('myApp.recipeDetail', ['ngRoute', 'ui.bootstrap'])
                     reviews: $scope.reviewContent
 
                 };
-            Restangular.one('add-review/').customPOST(newReview).then(function(review) {
 
+            Restangular.one('add-review/').customPOST(newReview).then(function(review) {
                 $scope.recipe.reviews.push(review);
                 $scope.reviewUserName="";
                 $scope.reviewTitle="";
                 $scope.reviewContent="";
                 $scope.rate="";
-
-
             });
         };
 
-
-
-
-//delete a review
+        //delete a review
         $scope.deleteReview=function(objects, index){
 
             var id=objects["id"];
 
             Restangular.one('review', id).customDELETE().then(function(){
-
 	            $scope.recipe.reviews.splice(index, 1);
-
             });
 
 
         };
-
-
 
         //show the addReview form or hide it
         $scope.reviewform = true;
