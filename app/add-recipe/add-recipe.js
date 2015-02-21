@@ -11,7 +11,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
 .controller('AddRecipeCtrl', ['$scope', 'Restangular', '$location', '$http', function($scope, Restangular, $location, $http) {
 
-    var host = $location.host();
+
 
     $scope.uploadFile = function (files) {
         $scope.recipe.picture = files[0];
@@ -27,7 +27,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         fd.append("directions", $scope.recipe.directions);
         fd.append("ingredients", $scope.recipe.ingredients);
 
-        $http.post(host+'add-recipe/', fd, {
+        $http.post('api/add-recipe/', fd, {
             headers: {'Content-Type':  undefined},
             transformRequest: angular.identity
         }).success(function (response) {
