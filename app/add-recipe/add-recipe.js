@@ -27,16 +27,25 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         fd.append("directions", $scope.recipe.directions);
         fd.append("ingredients", $scope.recipe.ingredients);
 
-        $http.post(host+'add-recipe/', fd, {
-            headers: {'Content-Type':  undefined},
-            transformRequest: angular.identity
-        }).success(function (response) {
-            $location.path('/recipes');
-        }).error(function (response) {
-            if (response['photo']){
-                alert('Error: Add a photo!');
-            }
-
+        Restangular.one('add-recipe/').withHttpConfig({transformRequest: angular.identity})
+            .customPOST(fd, '', undefined, {'Content-Type': undefined})
+            .then(function (response) {
+                $location.path('/recipes');
+            }).error(function (response) {
+                alert('Error: Fill up all the blanks!');
         });
+
+        //
+        //$http.post(host+'add-recipe/', fd, {
+        //    headers: {'Content-Type':  undefined},
+        //    transformRequest: angular.identity
+        //}).success(function (response) {
+        //    $location.path('/recipes');
+        //}).error(function (response) {
+        //    if (response['photo']){
+        //        alert('Error: Add a photo!');
+        //    }
+        //
+        //});
     };
     }]);

@@ -16,7 +16,7 @@ angular.module('myApp', [
     $routeProvider
         .otherwise({
           redirectTo: '/welcome'}); //$routeProvider set main page
-    RestangularProvider.setBaseUrl('/api');  //RestangularProvider set base url
+    RestangularProvider.setBaseUrl('http://localhost:8001/');  //RestangularProvider set base url
   }])
 
     .service('RecipeService', ['Restangular', '$q', function(Restangular, $q){
